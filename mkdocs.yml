@@ -1,0 +1,59 @@
+site_name: LeetCode
+site_author: Litreily
+site_description: leetcode solutions
+site_url: http://www.litreily.top/leetcode/
+repo_url: https://github.com/Litreily/leetcode-docs
+edit_uri: tree/master/docs/
+
+theme:
+  name: material
+  # favicon: 
+  # logo: 
+  palette:
+    primary: 'red'
+    accent: 'red'
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  # - pymdownx.arithmatex
+  # - pymdownx.betterem:
+  #     smart_enable: all
+  # - pymdownx.caret
+  # - pymdownx.critic
+  # - pymdownx.details
+  # - pymdownx.emoji:
+  #     emoji_index: !!python/name:materialx.emoji.twemoji
+  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  # - pymdownx.highlight:
+  #     linenums_style: pymdownx-inline
+  # - pymdownx.inlinehilite
+  # - pymdownx.keys
+  # - pymdownx.magiclink
+  - pymdownx.mark
+  # - pymdownx.smartsymbols
+  # - pymdownx.snippets:
+  #     check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  # - pymdownx.tasklist:
+  #     custom_checkbox: true
+  # - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/litreily
+extra_css:
+extra_javascript:
+
+nav:
+  - 前言: index.md
+  - 算法: 
+    - 1.两数之和: algorithm/1.two-sum.md
+  - shell:
+    - 193.有效电话号码: shell/193.valid-phone-numbers.md

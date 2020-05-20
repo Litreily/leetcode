@@ -52,7 +52,7 @@ extra_css:
 extra_javascript:
 
 nav:
-  - 前言: index.md
+  - LeetCode: index.md
   - 算法: 
     - 1.两数之和: algorithm/1.two-sum.md
   - shell:

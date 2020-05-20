@@ -1,14 +1,19 @@
-site_name: LeetCode
+site_name: LeetCode Solutions
 site_author: Litreily
 site_description: leetcode solutions
 site_url: http://www.litreily.top/leetcode/
 repo_url: https://github.com/Litreily/leetcode-docs
 edit_uri: tree/master/docs/
 
+copyright: Copyright &copy; 2020 LITREILY
+
 theme:
   name: material
   # favicon: 
-  # logo: 
+  icon:
+    logo: material/book-open-page-variant
+  features:
+    - tabs
   palette:
     primary: 'red'
     accent: 'red'
@@ -43,6 +48,11 @@ markdown_extensions:
   # - pymdownx.tasklist:
   #     custom_checkbox: true
   # - pymdownx.tilde
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
 
 extra:
   social:

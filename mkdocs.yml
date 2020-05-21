@@ -63,6 +63,7 @@ extra_javascript:
 
 nav:
   - LeetCode: index.md
+  - About: about.md
   - 算法: 
     - 1.两数之和: algorithm/1.two-sum.md
   - shell:

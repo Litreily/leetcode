@@ -67,4 +67,6 @@ nav:
   - 算法: 
     - 1.两数之和: algorithm/1.two-sum.md
   - shell:
+    - 192.统计词频: shell/192.word-frequency.md
     - 193.有效电话号码: shell/193.valid-phone-numbers.md
+    - 195.第十行: shell/195.tenth-line.md

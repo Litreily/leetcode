@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>http://www.litreily.top/leetcode/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/about/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/algorithm/1.two-sum/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://www.litreily.top/leetcode/algorithm/m64.qiu-12n-lcof/</loc>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/shell/192.word-frequency/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/shell/193.valid-phone-numbers/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/shell/194.transpose-file/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://www.litreily.top/leetcode/shell/195.tenth-line/</loc>
-     <lastmod>2020-05-29</lastmod>
+     <lastmod>2020-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -111,9 +111,9 @@ def gen_template(question, question_info):
         '    **难度**：{}  \n'.format(level) + \
         '    **链接**：<https://leetcode-cn.com/problems/{}/>\n\n'.format(
             question['question__title_slug']) + \
+        '## 描述\n\n' + \
         content + \
-        '\n## 描述\n\n' + \
-        '## 题解\n\n'
+        '\n## 题解\n\n'
 
     return template
 

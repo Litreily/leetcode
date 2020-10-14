@@ -86,11 +86,17 @@ def html2md(html):
         '<pre>': '```\n',
         '</pre>': '\n```',
         '<code>': '`',
-        '</code>': '`'
-        }
+        '</code>': '`',
+        '&quot;': '"',
+        '<li>': '- ',
+        '</li>': '',
+        '<ul>': '',
+        '</ul>': ''
+    }
     pattern = re.compile('|'.join(rep.keys()))
     md = pattern.sub(lambda m: rep[m.group(0)], html)
     return md
+
 
 def gen_template(question, question_info):
     """generate template info

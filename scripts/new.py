@@ -11,8 +11,11 @@ import os
 import sys
 import json
 
-
-QUESTIONS_FILE = 'scripts/questions.json'
+BASE_DIR = sys.path[0]
+ROOT_DIR = os.path.split(BASE_DIR)[0]
+ALGORITHM_DIR = os.path.join(ROOT_DIR, 'docs/algorithm')
+QUESTIONS_FILE = os.path.join(BASE_DIR, 'questions.json')
+MKDOCS_FILE = os.path.join(ROOT_DIR, 'mkdocs.yml')
 
 
 def get_question_by_id(question_id):
@@ -111,12 +114,14 @@ def main():
     template = gen_template(question, question_info)
 
     filename = '{}.{}.md'.format(question_id, question['question__title_slug'])
-    filepath = 'docs/algorithm/' + filename
+    filepath = os.path.join(ALGORITHM_DIR, filename)
     with open(filepath, 'w') as f:
+        print('create new file ' + filepath)
         f.write(template)
 
     # add item to mkdocs.yml
-    with open('mkdocs.yml', 'a') as f:
+    with open(MKDOCS_FILE, 'a') as f:
+        print('append new file to mkdocs.yml')
         question_item = '    - {}.{}: algorithm/{}\n'.format(
             question_id, question_info['translatedTitle'], filename)
         f.write(question_item)

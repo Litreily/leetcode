@@ -62,17 +62,22 @@ def get_question_info(question):
     data = {
         "operationName": "questionData",
         "variables": {"titleSlug": question_slug},
-        "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId\n    questionFrontendId\n    boundTopicId\n    title\n    titleSlug\n    content\n    translatedTitle\n    translatedContent\n    difficulty\n    hints\n    sampleTestCase\n }\n}\n"
+        "query": "query questionData($titleSlug: String!) {\n  \
+            question(titleSlug: $titleSlug) {\n    questionId\n    \
+            questionFrontendId\n    boundTopicId\n    title\n    titleSlug\n \
+            content\n    translatedTitle\n    translatedContent\n    \
+            difficulty\n    hints\n    sampleTestCase\n }\n}\n"
     }
     res = requests.post(base_url, json=data, headers=headers)
     return res.text
+
 
 def html2md(html):
     """Convert html doc to markdown doc
     replace all matches to related chars.
     """
     rep = {
-        '<p>': '', 
+        '<p>': '',
         '</p>': '',
         '<strong>': '**',
         '</strong>': '**',

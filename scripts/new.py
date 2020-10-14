@@ -10,6 +10,7 @@ import requests
 import os
 import sys
 import json
+import re
 
 BASE_DIR = sys.path[0]
 ROOT_DIR = os.path.split(BASE_DIR)[0]
@@ -66,6 +67,25 @@ def get_question_info(question):
     res = requests.post(base_url, json=data, headers=headers)
     return res.text
 
+def html2md(html):
+    """Convert html doc to markdown doc
+    replace all matches to related chars.
+    """
+    rep = {
+        '<p>': '', 
+        '</p>': '',
+        '<strong>': '**',
+        '</strong>': '**',
+        '&nbsp;': ' ',
+        '&gt;': '>',
+        '<pre>': '```\n',
+        '</pre>': '\n```',
+        '<code>': '`',
+        '</code>': '`'
+        }
+    pattern = re.compile('|'.join(rep.keys()))
+    md = pattern.sub(lambda m: rep[m.group(0)], html)
+    return md
 
 def gen_template(question, question_info):
     """generate template info
@@ -85,12 +105,14 @@ def gen_template(question, question_info):
         3: "困难"
     }
     level = levels.get(question['level'])
+    content = html2md(question_info['translatedContent'])
     template = '# {}\n\n'.format(question_info['translatedTitle']) + \
         '!!! info ""\n' + \
         '    **难度**：{}  \n'.format(level) + \
         '    **链接**：<https://leetcode-cn.com/problems/{}/>\n\n'.format(
             question['question__title_slug']) + \
-        '## 描述\n\n' + \
+        content + \
+        '\n## 描述\n\n' + \
         '## 题解\n\n'
 
     return template

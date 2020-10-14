@@ -50,6 +50,46 @@ curl 'https://leetcode-cn.com/graphql/' \
   -o output.json
 ```
 
+## 自动创建文档
+
+使用脚本可以快速获取指定Leetcode ID 的题目描述，并自动生成文件模板，省去网上搜索及初始化描述信息的时间。
+
+```bash
+python3 scripts/new.py <question_id>
+
+# example
+python3 scripts/new.py 1
+```
+
+脚本`new.py`位于GitHub <https://github.com/Litreily/leetcode/blob/master/scripts/new.py>
+
+下面是使用脚本自动生成的文件`1.two-sum.md`，超级方便有木有。
+
+```markdown
+# 两数之和
+
+!!! info ""
+    **难度**：简单  
+    **链接**：<https://leetcode-cn.com/problems/two-sum/>
+
+## 描述
+
+给定一个整数数组 `nums` 和一个目标值 `target`，请你在该数组中找出和为目标值的那 **两个** 整数，并返回他们的数组下标。
+
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+
+**示例:**
+
+ ```
+ 给定 nums = [2, 7, 11, 15], target = 9
+
+ 因为 nums[0] + nums[1] = 2 + 7 = 9
+ 所以返回 [0, 1]
+ ```
+
+## 题解
+```
+
 ## reference
 
 - [wang - leetcode前300道题详解](https://leetcode.wang/)

@@ -85,7 +85,7 @@ def gen_template(question, question_info):
         3: "困难"
     }
     level = levels.get(question['level'])
-    str = '# {}\n\n'.format(question_info['translatedTitle']) + \
+    template = '# {}\n\n'.format(question_info['translatedTitle']) + \
         '!!! info ""\n' + \
         '    **难度**：{}  \n'.format(level) + \
         '    **链接**：<https://leetcode-cn.com/problems/{}/>\n\n'.format(
@@ -93,7 +93,7 @@ def gen_template(question, question_info):
         '## 描述\n\n' + \
         '## 题解\n\n'
 
-    return str
+    return template
 
 
 def main():

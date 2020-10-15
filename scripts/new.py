@@ -80,11 +80,12 @@ def get_question_info(question):
     data = {
         "operationName": "questionData",
         "variables": {"titleSlug": question_slug},
-        "query": "query questionData($titleSlug: String!) {\n  \
-            question(titleSlug: $titleSlug) {\n    questionId\n    \
-            questionFrontendId\n    boundTopicId\n    title\n    titleSlug\n \
-            content\n    translatedTitle\n    translatedContent\n    \
-            difficulty\n    hints\n    sampleTestCase\n }\n}\n"
+        "query": "query questionData($titleSlug: String!) {\n \
+            question(titleSlug: $titleSlug) {\n questionId\n \
+            questionFrontendId\n boundTopicId\n title\n titleSlug\n \
+            content\n translatedTitle\n translatedContent\n \
+            difficulty\n topicTags {\n name\n slug\n }\n hints\n \
+            sampleTestCase\n }\n}\n"
     }
     res = requests.post(base_url, json=data, headers=headers)
     return res.text
@@ -116,6 +117,25 @@ def html2md(html):
     return md
 
 
+def gen_md_tags(tags):
+    """
+    input leetcode topicTags:
+        "topicTags": [
+            {
+                "name": "Hash Table",
+                "slug": "hash-table"
+            },
+    output markdown links as tags:
+        [`tag-1`](tag-1-url) [`tag-2`](tag-2-url)
+    """
+    md_tags = []
+    for tag in tags:
+        tag_name = tag['name']
+        tag_url = 'https://leetcode-cn.com/tag/' + tag['slug']
+        md_tags.append('[`{}`]({})'.format(tag_name, tag_url))
+    return ', '.join(md_tags)
+
+
 def gen_template(question, question_info):
     """generate template info
     # title
@@ -123,6 +143,8 @@ def gen_template(question, question_info):
     !!! info ""
         **难度**：简单
         **链接**：<https://leetcode-cn.com/problems/two-sum/>
+
+    标签：[`tag-1`](tag-1-link) [`tag-2`](tag-2-link)
 
     ## 描述
 
@@ -134,13 +156,15 @@ def gen_template(question, question_info):
         3: "困难"
     }
     level = levels.get(question['level'])
+    tags = gen_md_tags(question_info['topicTags'])
     content = html2md(question_info['translatedContent'])
     template = '# {}\n\n'.format(question_info['translatedTitle']) + \
         '!!! info ""\n' + \
         '    **难度**：{}  \n'.format(level) + \
         '    **链接**：<https://leetcode-cn.com/problems/{}/>\n\n'.format(
             question['question__title_slug']) + \
-        '## 描述\n\n' + \
+        '标签：{}\n'.format(tags) + \
+        '\n## 描述\n\n' + \
         content + \
         '\n## 题解\n\n'
 

@@ -76,3 +76,4 @@ nav:
   - 算法: 
     - 面试题64.求1+2+...+n: algorithm/m64.qiu-12n-lcof.md
     - 1.两数之和: algorithm/1.two-sum.md
+    - 2.两数相加: algorithm/2.add-two-numbers.md

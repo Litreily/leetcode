@@ -102,7 +102,7 @@ def html2md(html):
         '</strong>': '**',
         '&nbsp;': ' ',
         '&gt;': '>',
-        '<pre>': '```\n',
+        '<pre>': '```yaml\n',
         '</pre>': '\n```',
         '<code>': '`',
         '</code>': '`',

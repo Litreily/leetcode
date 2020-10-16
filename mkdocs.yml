@@ -77,3 +77,4 @@ nav:
     - 面试题64.求1+2+...+n: algorithm/m64.qiu-12n-lcof.md
     - 1.两数之和: algorithm/1.two-sum.md
     - 2.两数相加: algorithm/2.add-two-numbers.md
+    - 3.无重复字符的最长子串: algorithm/3.longest-substring-without-repeating-characters.md
